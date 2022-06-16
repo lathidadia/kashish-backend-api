@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::post('/register', 'App\Http\Controllers\Api\AuthController@register');
-Route::post('/login', 'App\Http\Controllers\Api\AuthController@login');
+Route::post('/register', 'Api\AuthController@register');
+Route::post('/login', 'Api\AuthController@login');
 
-Route::apiResource('/assets', 'App\Http\Controllers\Api\ASSETController')->middleware('auth:api');
+Route::apiResource('/assets', 'Api\ASSETController')->middleware('auth:api');
 
 
 

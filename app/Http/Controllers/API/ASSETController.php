@@ -20,7 +20,7 @@ class ASSETController extends Controller
         $query = \Request::query();
         
         $assets = ASSET::all();
-        return response([ 'assets' => ASSETResource::collection($assets), 'message' => $query['a']], 200);
+        return response([ 'assets' => ASSETResource::collection($assets), 'message' => 'Assets retrieved successfully'], 200);
     }
 
     /**

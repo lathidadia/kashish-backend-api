@@ -58,8 +58,12 @@ class ASSETController extends Controller
      */
     public function show($id)
     {
-        $aSSET = ASSET::where('id',$id)->get();
-        return response([ "asset" => ($aSSET), 'message' => 'Asset retrieved successfully'], 200);
+        if(is_int($id) === true){
+            $aSSET = ASSET::where('id',$id)->get();
+            return response([ "asset" => ($aSSET), 'message' => 'Asset retrieved successfully'], 200);
+        }
+        else 
+            return response([ "error" => 'Invalid id'], 400);
     }
 
     /**
